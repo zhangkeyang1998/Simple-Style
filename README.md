@@ -14,7 +14,7 @@ This project is licensed under [MIT, copyright (c) 2019 Linlin Yan](https://gith
 
 In `config.toml`
 
-```
+```toml
 [params]
 subtitle = "Sub title of the site"
 favicon = "/<path-to-site-icon>/logo.ico"
@@ -28,4 +28,27 @@ search = "..."  # baidu, google, bing, duckduckgo
 dateFormat = "Mon Jan 2 15:04:05 MST 2006"  # see: https://gohugo.io/functions/format/#gos-layout-string
 externalLinkIcon = true
 externalLinkNewWindow = true
+```
+
+## Tips of the Blog
+
+In `hugo.toml`: 
+
+```toml
+[Permalinks]
+posts = "posts/:slugorcontentbasename"
+```
+
+In `archetypes/default.md`:
+
+```toml
++++
+date = {{ .Date }}
+title = "{{ replace .Name "-" " " | title }}"
+slug = "{{ now.UnixNano | sha256 | truncate 12 "" }}"
+draft = true
+math = false
+categories = []
+tags = []
++++
 ```
