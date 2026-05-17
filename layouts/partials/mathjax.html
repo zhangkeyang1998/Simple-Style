@@ -1,0 +1,13 @@
+<script id="MathJax-script" async src="{{ "/thirdparty/mathjax/tex-mml-chtml.js" | relURL }}"></script>
+<script>
+    MathJax = {
+        tex: {
+            // 这里配置的定界符必须和你第一步里配置的严格一致
+            displayMath: [['$$', '$$']],    // 块级公式
+            inlineMath: [['$', '$']]        // 行内公式          // 行内公式
+        },
+        loader: {
+            load: ['ui/safe']
+        },
+    };
+</script>

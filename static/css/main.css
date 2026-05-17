@@ -1,0 +1,457 @@
+@import url("font.css");
+@import url("shortcodes/figure.css");
+@import url("shortcodes/tabs.css");
+@import url("markup/render-blockquote-alert.css");
+
+body {
+    font-family: "Times New Roman", "'FangZhengShuSongJianTi-1'", Georgia, serif;
+    font-size: 18px;
+}
+
+div,
+table {
+    margin: 0;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 10px;
+    color: #333;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #999;
+    line-height: 1
+}
+
+header h1 {
+    font-size: 160%;
+}
+
+header h2 {
+    font-size: 120%;
+}
+
+footer {
+    margin: 0;
+    padding: 10px 0;
+    border-top: 1px solid #999;
+    line-height: 1;
+    text-align: center
+}
+
+/* 实现文段两端对齐 */
+article {
+    text-align: justify;
+}
+
+article h1 {
+    line-height: 2;
+    font-size: 160%
+}
+
+article h2 {
+    line-height: 1.6;
+    font-size: 120%
+}
+
+article h3,
+article h4,
+article h5,
+article h6 {
+    line-height: 1.2;
+    font-size: 100%
+}
+
+/* 正文有序列表序号显示 */
+article ol {
+    /* 显示数字序号 */
+    list-style-type: decimal;
+    /* 为序号留出空间 */
+    margin: 0.5em 0;
+    padding-left: 1em;
+}
+
+/* 正文无序列表 */
+article ul {
+    /* 一级无序列表: 显示实心圆点 */
+    list-style-type: disc;
+    margin: 0.5em 0;
+    padding-left: 1em;
+}
+
+article ul ul {
+    /* 二级无序列表: 显示空心圆点 */
+    list-style-type: circle;
+}
+
+article ul ul ul {
+    /* 三级无序列表: 显示实心方块 */
+    list-style-type: square;
+}
+
+img {
+    margin: 10px auto;
+    width: 90%;
+    max-width: 600px;
+    padding: 0 10px;
+    height: auto;
+    display: block
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed #999;
+    color: #fff;
+    background-color: #fff;
+    height: 1px
+}
+
+a {
+    color: #00f;
+    word-wrap: break-word
+}
+
+a:visited {
+    color: #009
+}
+
+a:hover {
+    color: #f80;
+}
+
+header a,
+header a:visited,
+footer a,
+footer a:visited,
+h1 a,
+h1 a:visited,
+h2 a,
+h2 a:visited,
+h3 a,
+h3 a:visited,
+h4 a,
+h4 a:visited,
+h5 a,
+h5 a:visited,
+h6 a,
+h6 a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+header a:hover,
+footer a:hover,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+    text-decoration: none;
+    color: #f80;
+}
+
+a.external {
+    background-image: url("/images/external-link-icon.svg");
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 13px;
+}
+
+header nav {
+    padding: 10px 0;
+    text-align: right;
+}
+
+header nav a {
+    padding-left: 15px;
+}
+
+/* ============================ 表格风格(开始) ============================ */
+article table {
+    padding: 0;
+    word-break: initial;
+    width: 100%;           /* 宽度根据内容自动调整，而不是占满整屏 */
+    margin: 1em auto;      /* 表格水平居中 */
+    border-collapse: collapse;
+    display: table;        /* 覆盖之前的 block，让宽度自适应生效 */
+}
+
+article th {
+    font-weight: bold;
+    border: none;
+    padding: 6px 13px;
+    background-color: #f2f2f2;  /* 表头浅灰背景 */
+}
+
+article td {
+    border: none;
+    padding: 6px 13px;
+}
+
+/* 核心：行之间的分隔线 */
+article tbody tr {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* 第一行顶部用稍粗的线分隔表头 */
+article tbody tr:first-child {
+    border-top: 2px solid #aaa;
+}
+
+/* 最后一行无底部边框（可选） */
+article tbody tr:last-child {
+    border-bottom: none;
+}
+
+article tr:hover td {
+    background-color: #e9ecef;   /* 悬停整行高亮 */
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+/* ============================ 表格风格(结束) ============================ */
+
+/* ============================ 代码风格(开始) ============================ */
+
+code {
+    border: 1px dotted #999;
+    background-color: #f0f0f0;
+    padding: 1px 2px;
+    line-height: 150%;
+    word-wrap: break-word;
+}
+
+pre {
+    border: 1px solid #999;
+    background-color: #f0f0f0;
+    padding: 5px;
+    overflow: auto;
+}
+
+pre code {
+    border: 0;
+    background: none;
+    padding: 0;
+    font-family: 'MapleMonoNormalNL-Regular', 'Courier New', monospace !important;
+    font-size: 14px;
+}
+
+/* ============================ 代码风格(结束) ============================ */
+
+blockquote {
+    margin: 0;
+    padding: 0 0 0 20px;
+    border-left: solid 5px #ccc;
+    font-size: .8em
+}
+
+ul.pagination {
+    list-style-type: none;
+    text-align: center
+}
+
+li.page-item {
+    display: inline;
+    padding-right: 15px
+}
+
+svg.permalink {
+    color: #666;
+    fill: currentColor
+}
+
+svg:hover.permalink {
+    color: #f00;
+    fill: currentColor
+}
+
+.title {
+    padding: 0;
+    margin: 20px 0
+}
+
+.meta,
+.content {
+    padding: 0;
+    margin: 10px 0
+}
+
+.tag {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+nav#TableOfContents {
+    float: right;
+    width: 200px;
+    overflow: auto;
+    /* 距离浏览器顶部 20px 时固定 */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    /* 给目录添加左右外边距 */
+    /* 注意：
+     *     如果float: left，需要对应修改：
+     *     margin: 0 20px 0 0;
+     */
+    margin: 0 0 0 20px;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+nav#TableOfContents:before {
+    content: 'Content';
+    font-weight: bold;
+}
+
+nav#TableOfContents:lang(*-Hans)::before {
+    content: '目录';
+    font-weight: bold;
+}
+
+nav#TableOfContents ul {
+    margin: 0;
+    padding-inline-start: 24px;
+}
+
+.content-with-toc {
+    width: calc(100% - 240px);
+    margin: 0;
+}
+
+@media (max-width:500px) {
+    nav#TableOfContents {
+        float: none;
+        width: 100%;
+    }
+
+    .content-with-toc {
+        width: 100%;
+    }
+}
+
+.title h1,
+.title h2 {
+    padding: 0
+}
+
+.meta div {
+    padding: 0
+}
+
+.content h1 {
+    padding: 0;
+    margin: 25px 0 0
+}
+
+.content h2 {
+    padding: 0;
+    margin: 20px 0 0
+}
+
+.content h3 {
+    padding: 0;
+    margin: 20px 0 0
+}
+
+.content h4 {
+    padding: 0;
+    margin: 15px 0 0
+}
+
+.content h5 {
+    padding: 0;
+    margin: 10px 0 0
+}
+
+.content h6 {
+    padding: 0;
+    margin: 10px 0 0
+}
+
+.content p {
+    padding: 0;
+    margin: 10px 0
+}
+
+div.search2 {
+    position: fixed;
+    right: -30px;
+    max-width: 300px;
+    overflow: auto;
+    top: 1px;
+    width: 300px;
+    bottom: 100px
+}
+
+div.search {
+    display: inline-block;
+    margin-bottom: -12px;
+}
+
+form.search {
+    width: 125px;
+    margin-left: 15px;
+}
+form.search input[type=text] {
+    padding: 5px 30px 5px 5px;
+    border: 1px solid #999;
+    float: left;
+    width: 80px;
+}
+form.search input[type=text]:focus {
+    border: 1px solid #333;
+    float: left;
+    width: 80px;
+}
+form.search button {
+    float: left;
+    width: 30px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: -30px;
+}
+form.search .fa-search::before {
+    content: "\1F50D";
+    font-style: normal;
+    color: #999;
+}
+form.search button:hover {
+    color: #333;
+}
+
+.article-list li {
+    margin-bottom: 0.5em;
+}
+
+.article-list li .article-date,
+.article-list li .article-title {
+    display: inline-block;
+}
+
+.article-list li .article-date:after {
+    content: ' - ';
+}
+
+@media (max-width:500px) {
+
+    .article-list li .article-date,
+    .article-date li .article-title {
+        display: block;
+    }
+
+    .article-list li .article-date:after {
+        content: '';
+    }
+}

@@ -1,0 +1,12 @@
+name = "simple-style"
+license = "MIT"
+licenselink = "https://github.com/yanlinlin82/simple-style/blob/master/LICENSE"
+description = "A simple style hugo theme by Keyang Zhang."
+homepage = "https://github.com/yanlinlin82/simple-style/"
+tags = [ "simple", "blog", "white" ]
+features = [ "simple", "white" ]
+min_version = "0.61.0"
+
+[author]
+name = "Keyang Zhang"
+homepage = "http://blog.zkyspace.top"

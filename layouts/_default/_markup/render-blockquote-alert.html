@@ -1,0 +1,25 @@
+{{- /*
+警告框渲染模板
+支持 [!NOTE], [!TIP], [!WARNING], [!CAUTION], [!IMPORTANT] 等类型
+*/ -}}
+
+{{- $alertType := .AlertType | default "note" -}}
+{{- $iconMap := dict
+    "note" "📝"
+    "tip" "💡"
+    "warning" "⚠️"
+    "caution" "⚠️"
+    "important" "❗"
+    "info" "ℹ️"
+-}}
+{{- $icon := index $iconMap $alertType | default "📌" -}}
+
+<div class="alert alert-{{ $alertType }}">
+    <div class="alert-title">
+        <span class="alert-icon">{{ $icon }}</span>
+        <span class="alert-type">{{ .AlertTitle | default (title $alertType) }}</span>
+    </div>
+    <div class="alert-content">
+        {{ .Text | safeHTML }}
+    </div>
+</div>

@@ -1,0 +1,33 @@
+/*
+ * 这个文件中保存所有自定义的字体。
+ */
+
+@font-face {
+    /* 给定自定义字体的名称 */
+    font-family: 'FangZhengShuSongJianTi-1';
+    /* 给定自定义字体的路径 */
+    /* woff与woff2字体可以根据ttf字体生成: */
+    /* https://products.aspose.app/font/zh/conversion */
+    src: url('/fonts/FangZhengShuSongJianTi-1.woff2') format('woff2'),
+         url('/fonts/FangZhengShuSongJianTi-1.woff') format('woff'),
+         url('/fonts/FangZhengShuSongJianTi-1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* 优化加载体验，先显示备用字体 */
+    font-display: swap;
+}
+
+@font-face {
+    /* 给定自定义字体的名称 */
+    font-family: 'MapleMonoNormalNL-Regular';
+    /* 给定自定义字体的路径 */
+    /* woff与woff2字体可以根据ttf字体生成: */
+    /* https://products.aspose.app/font/zh/conversion */
+    src: url('/fonts/MapleMonoNormalNL-Regular.woff2') format('woff2'),
+         url('/fonts/MapleMonoNormalNL-Regular.woff') format('woff'),
+         url('/fonts/MapleMonoNormalNL-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    /* 优化加载体验，先显示备用字体 */
+    font-display: swap;
+}
