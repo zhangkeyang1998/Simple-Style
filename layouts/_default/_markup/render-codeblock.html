@@ -1,0 +1,20 @@
+{{- /*
+代码块渲染模板 - 支持折叠/展开功能
+
+使用方式：
+    在 Markdown 中正常使用围栏代码块即可，自动添加折叠功能。
+    默认最大高度为 400px，超过此高度才显示折叠按钮。
+*/ -}}
+
+{{- $highlightOptions := dict 
+    "linenos" (or .Attributes.linenos false)
+    "hl_lines" (or .Attributes.hl_lines nil)
+-}}
+{{- $highlighted := transform.Highlight .Inner .Type $highlightOptions -}}
+
+<div class="code-block-wrapper" data-code-lang="{{ .Type }}">
+    <div class="code-block-content">
+        {{ $highlighted | safeHTML }}
+    </div>
+    <button class="code-toggle-btn">▼ 展开完整代码</button>
+</div>

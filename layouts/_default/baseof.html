@@ -6,6 +6,7 @@
   {{- partial "html-meta.html" . }}
   <title>{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
   {{- with .Site.Params.favicon }}<link rel="shortcut icon" href="{{ . }}" type="image/x-icon">{{ end }}
+  <script src="{{ "/js/markup/render-codeblock.js" | relURL }}" defer></script>
   <link rel="stylesheet" type="text/css" href="{{ "/css/main.css" | relURL }}">
   {{- partial "google-tag-manager-head.html" . }}
   {{ if .Param "math" }}
