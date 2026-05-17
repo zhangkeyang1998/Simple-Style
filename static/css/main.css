@@ -357,31 +357,54 @@ svg:hover.permalink {
     margin-right: 10px;
 }
 
-nav#TableOfContents {
-    float: right;
-    width: 200px;
-    overflow: auto;
-    /* 距离浏览器顶部 20px 时固定 */
-    position: -webkit-sticky;
-    position: sticky;
-    top: 20px;
-    /* 给目录添加左右外边距 */
-    /* 注意：
-     *     如果float: left，需要对应修改：
-     *     margin: 0 20px 0 0;
-     */
-    margin: 0 0 0 20px;
-    padding: 0 10px;
-    vertical-align: top;
+/* ============================ TOC 响应式布局 ============================ */
+
+/* 桌面端（宽屏 ≥ 769px）：TOC 固定在右侧 */
+@media (min-width: 769px) {
+    nav#TableOfContents {
+        float: right;
+        width: 200px;
+        overflow: auto;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20px;
+        margin: 0 0 0 20px;
+        padding: 0 10px;
+        vertical-align: top;
+        max-height: calc(100vh - 40px);
+    }
+
+    .content-with-toc {
+        width: calc(100% - 240px);
+        margin: 0;
+    }
 }
 
-/* TOC 链接长文本处理 */
+/* 移动端（窄屏 ≤ 768px）：TOC 显示在正文上方 */
+@media (max-width: 768px) {
+    nav#TableOfContents {
+        float: none;
+        width: 100%;
+        overflow: auto;
+        top: 20px;
+        margin: 0px;
+        padding: 0 10px;
+        vertical-align: top;
+        max-height: calc(100vh - 40px);
+    }
+
+    .content-with-toc {
+        width: 100%;
+        margin: 0;
+    }
+}
+
 nav#TableOfContents a {
     display: inline-block;
-    max-width: 180px;           /* 限制最大宽度，可根据实际情况调整 */
+    max-width: 100%;
     overflow: hidden;
-    white-space: nowrap;        /* 强制不换行 */
-    text-overflow: ellipsis;    /* 超出部分显示省略号 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
     vertical-align: middle;
 }
 
@@ -397,6 +420,8 @@ nav#TableOfContents a:hover {
 nav#TableOfContents:before {
     content: 'Content';
     font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
 }
 
 nav#TableOfContents:lang(*-Hans)::before {
@@ -409,21 +434,7 @@ nav#TableOfContents ul {
     padding-inline-start: 24px;
 }
 
-.content-with-toc {
-    width: calc(100% - 240px);
-    margin: 0;
-}
-
-@media (max-width:500px) {
-    nav#TableOfContents {
-        float: none;
-        width: 100%;
-    }
-
-    .content-with-toc {
-        width: 100%;
-    }
-}
+/* ============================ TOC 响应式布局(结束) ============================ */
 
 .title h1,
 .title h2 {
