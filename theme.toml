@@ -1,8 +1,8 @@
 name = "simple-style"
 license = "MIT"
-licenselink = "https://github.com/yanlinlin82/simple-style/blob/master/LICENSE"
+licenselink = "https://github.com/zhangkeyang1998/Simple-Style/blob/master/LICENSE"
 description = "A simple style hugo theme by Keyang Zhang."
-homepage = "https://github.com/yanlinlin82/simple-style/"
+homepage = "https://github.com/zhangkeyang1998/Simple-Style.git"
 tags = [ "simple", "blog", "white" ]
 features = [ "simple", "white" ]
 min_version = "0.61.0"
